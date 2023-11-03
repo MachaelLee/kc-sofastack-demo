@@ -11,6 +11,12 @@ import java.util.List;
  * @author yuanyuan
  * @since 2019/6/10
  */
+import org.springframework.stereotype.Service;
+import com.alipay.sofa.runtime.api.annotation.SofaService;
+import com.alipay.sofa.runtime.api.annotation.SofaServiceBinding;
+
+@Service
+@SofaService(interfaceType = StockMngFacade.class, uniqueId = "${service.unique.id}", bindings = { @SofaServiceBinding(bindingType = "bolt") })
 public class StockMngImpl implements StockMngFacade {
     @Resource
     private StockMngMapper stockMngMapper;

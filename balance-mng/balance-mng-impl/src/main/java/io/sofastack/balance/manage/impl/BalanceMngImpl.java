@@ -5,7 +5,12 @@ import io.sofastack.balance.manage.mapper.BalanceMngMapper;
 import io.sofastack.balance.manage.model.Balance;
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import org.springframework.stereotype.Service;
+import com.alipay.sofa.runtime.api.annotation.SofaService;
+import com.alipay.sofa.runtime.api.annotation.SofaServiceBinding;
 
+@Service
+@SofaService(interfaceType = BalanceMngFacade.class, uniqueId = "${service.unique.id}", bindings = { @SofaServiceBinding(bindingType = "bolt") })
 /**
  * @author yuanyuan
  * @since 2019/6/10
